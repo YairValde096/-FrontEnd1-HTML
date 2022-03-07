@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Cherry bomb!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+	background-color: #E8C5BF;
+        }
+
+        /* PORTADA PARA LOGO */
+        header {
+	    top: 0;
+	    position: fixed;
+	    width: 100%;	
+	    background-image: url("encaje.png");
+	    background-size: 110rem;            
+            padding: 0.1px;
+            text-align: center;
+            font-size: 35px;
+            color: purple;
+        }
+
+        /* COLUMNA IZQUIERDA */
+        nav {
+	    position: fixed;
+            float: left;	    
+            width: 30%;
+            height: 300px;
+            /*background-color: #E8C5BF;*/
+            padding: 10px;
+        }
+
+        }
+	
+    	nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: left;
+            padding: 15%;
+            width: 100%;
+            background-image: url("fondo4.png");
+	    background-size: 50rem;
+            height: 100%;	    
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* FOOTER */
+        footer {
+            background-image:url("footer2.png");
+	    background-size: 40rem;            
+	    position: fixed;
+  	    bottom: 0;
+	    width: 100%;
+	    height: 60px;	    
+            text-align: center;
+            color: purple;
+        }
+        
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+	input#abrir-cerrar {
+    		visibility:hidden;
+    		position: absolute;
+    		top: -9999px;
+	}
+
+
+	label[for="abrir-cerrar"] {
+    		cursor:pointer;
+    		padding: 0rem;
+    		color:#fff;
+    		display:inline-block;
+   		 width:10%;
+    
+
+	}
+
+	.cerrar {
+    		display:none;
+	}
+
+	#sidebar {
+   	 	width:0;
+	}
+
+	input#abrir-cerrar:checked ~ #sidebar {
+    		width:300px;
+	}
+
+	input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:checked ~ #contenido {
+    		margin-left:300px;
+    		transition: margin-left .4s;
+	}
+
+	input#abrir-cerrar:checked + label[for="abrir-cerrar"] .cerrar {
+    		display:inline;
+	}
+
+	input#abrir-cerrar:checked + label[for="abrir-cerrar"] .abrir {
+    		display:none;
+	}
+
+	.sidebar {
+    		position: fixed;    
+    		height: 100%;
+    		width: 0;
+    		top: 0;
+    		left: 0;
+    		z-index: 1;
+    		background-color: #99A3EA;
+    		overflow-x: hidden;
+    		transition: 0.4s;
+    		padding: 1rem 0;
+    		box-sizing:border-box;
+	}
+
+	.sidebar .boton-cerrar {
+    		position: absolute;
+    		top: 0.5rem;
+    		right: 1rem;
+    		font-size: 2rem;
+    		display: block;
+    		padding: 0;
+    		line-height: 1.5rem;
+    		margin: 0;
+    		height: 32px;
+    		width: 32px;
+    		text-align: center;
+    		vertical-align: top;
+	}
+
+	.sidebar ul, .sidebar li{
+    		margin:0;
+    		padding:0;
+    		list-style:none inside;
+	}
+
+	.sidebar ul {
+    		margin: 2rem auto;
+    		display: block;
+    		width: 80%;
+    		min-width:200px;
+	}
+
+	.sidebar a {
+    		display: block;
+    		font-size: 120%;
+    		color: #eee;
+    		text-decoration: none;
+    
+	}
+
+	.sidebar a:hover{
+    		color:#fff;
+    		background-color: #f90;
+
+	}
+
+	.abrir-cerrar {
+    		color: #2E88C7;
+    		font-size:1rem;   
+	}
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2><font size="15" face="Brush Script MT">Pastelería Cherry Bomb!</font><img src="img\cherry.gif" width="50" height="50"> </h2>
+    </header>
+
+    <section>
+        <nav>
+            
+ <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
+    <label for="abrir-cerrar"><img src="img\menu3.png" width="150" height="100" title="Menú"> 
+							   <span class="abrir"></span>
+							   <span class="cerrar"></span>
+    </label>
+    <div id="sidebar" class="sidebar">
+        <ul class="menu">
+	<font size="15" face="Brush Script MT">
+            <li><a href="galerias.html">Galeria</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+	                
+	</font>
+        </ul>
+    </div>
+        </nav>
+
+        <article>
+            <h1><font size="20" face="Perpetua" color="sky blue">¡Bienvenidos!</font></h1>
+            <p style="color:rgb(84,92,232);"><font size="6" face="Perpetua">Queridas y queridos clientes, les damos la bienvenida a la página de nuestra pastelería Cherry Bomb!, aquí encontrarás todo lo relacionado con nuestros pasteles, 
+		hay una sección para hacer pedidos y si tienes alguna petición especial no dudes en manarnos un mensaje, nos contactaremos contigo lo más rápido posible.
+		<br><br>Atentamente el equipo de
+	    </font></p>
+		<img src="img\logo.png">
+        </article>
+    </section>
+
+    <footer>
+<li><a href="pastelero.html">Portal del pastelero</a></li>        
+	<p>Pastelería Cherry Bomb!
+	Calle Gral Emiliano Zapata 7-B, Centro, 62550 Jiutepec, Mor.
+	Teléfonos: 55-55-55-55 y 66-66-66-66
+	Horario: L - S de 8:00 a 20:00 hrs</p> 
+    </footer>
+
+</body>
+
+</html>
